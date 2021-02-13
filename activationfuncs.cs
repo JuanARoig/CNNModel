@@ -22,7 +22,7 @@ namespace neuralnet
                         }
                         else
                         {
-                            final[i, j, k] = inputTensor[i, j, k];
+                            final[i, j, k] = 0;
                         }
                     }
                 }
