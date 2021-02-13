@@ -13,7 +13,7 @@ namespace neuralnet
 	    	sizeJ = 0;
 	    	sizeK = 0;
 
-            //the dimensions of the resulting matrix are funky.
+            //the dimensions of the resulting tensor are funky.
 	    	if (tensor1.GetLength(0) - kernel.GetLength(0) == 1) 
 	    	{
 	    		sizeI += 2;
@@ -42,7 +42,7 @@ namespace neuralnet
 	    	double[,,] tensorFinal = new double[sizeI,sizeJ,sizeK];
 		    for (int i = 0; i < tensorFinal.GetLength(0); i++)
 	    	{
-		    	for(int j = 0; j < tensorFinalGetLength(1); j++)	
+		    	for(int j = 0; j < tensorFinal.GetLength(1); j++)	
 		    	{	
 		    		for(int k = 0; k < tensorFinal.GetLength(2); k++)
 		    		{

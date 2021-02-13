@@ -8,7 +8,7 @@ namespace neuralnet{
 	partial class ConvolutionalNN
 	{
 		public ConvolutionalNN ConvolutionalNN() { }
-		public ConvolutionalNN ConvolutionalNN(int[,] kernelSizes)//kernelSizes j-hat sizes must be of size 3.
+		public ConvolutionalNN ConvolutionalNN(int[,] kernelSizes)//kernelSizes j-hat sizes should be of size 3.
 		{
 			this.kernelSizes = kernelSizes;
 		}	

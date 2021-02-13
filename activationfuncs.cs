@@ -29,10 +29,19 @@ namespace neuralnet
             }
             return final;
         }
-
-          public double[] SoftmaxOperation(double[] inputVector)//activation function for fully connected portion
+  
+        private double[] SoftmaxOperation(double[] inputVector)//activation function for fully connected portion
         {
-            
+            sum = 0;
+            double[] final = new double[inputVector.Length];
+            for (int i = 0; i < inputVector.Length; i++)
+            {
+                sum += inputVector[i];
+            }
+            for (int i = 0; i < inputVector.Length; i++)
+            {
+                final[i] = Math.exp(inputVector[i]) / sum;
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace neuralnet
 	    private int[] FCLayerSizes;
 
         //Convolutional Neural Net Properties
-        private int[,] kernelSizes;//kernel1Size is the cubic dimensions of the kernel. j-hat must be of size 3.
+        private int[,] kernelSizes;//kernel1Size is the cubic dimensions of the kernel. j-hat should be of size 3.
 	    private List<double[,,]> convLayerNetwork;
 	    private List<double[,,]> convLayerKernel;
 	    private List<double[,,]> convLayerKernelUpdates;
