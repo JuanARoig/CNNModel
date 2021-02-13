@@ -5,7 +5,7 @@ using System.Text;
 
 namespace neuralnet
 {
-    class ConvolutionalNN
+    partial class ConvolutionalNN
     {
         private double[,,] ConvolutionProduct(double[,,] tensor1, double[,,] kernel) 
 	    {	

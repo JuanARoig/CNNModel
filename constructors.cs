@@ -5,7 +5,7 @@ using System.Text;
 
 namespace neuralnet{
 
-	class ConvolutionalNN
+	partial class ConvolutionalNN
 	{
 		public ConvolutionalNN ConvolutionalNN() { }
 		public ConvolutionalNN ConvolutionalNN(int[,] kernelSizes)//kernelSizes j-hat sizes must be of size 3.

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace neuralnet
 {
-    class ConvolutionalNN
+    partial class ConvolutionalNN
     {
         private double[,,] AvgPoolingOperation(double[,,] inputTensor) 
         { 

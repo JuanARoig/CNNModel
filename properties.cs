@@ -5,7 +5,7 @@ using System.Text;
 
 namespace neuralnet
 {
-    class ConvolutionalNN
+    partial class ConvolutionalNN
     {
         //Fully Connected Neural Net Classifier Properties
 	    private int FCLayerAmount;
