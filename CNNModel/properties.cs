@@ -8,8 +8,10 @@ namespace neuralnet
     partial class ConvolutionalNN
     {
         //Fully Connected Neural Net Classifier Properties
-	    private int FCLayerAmount;
-	    private int[] FCLayerSizes;
+        public int seed { get; set; }
+	    private int FCLayerAmount = 2;
+        private int finalOutputSize;
+	    private int[] FCLayerSizes;//instantiated after cnnlayers completed.
 
         private List<double[]> biases;
         private List<double[,]> weights;

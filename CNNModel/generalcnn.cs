@@ -13,13 +13,17 @@ namespace neuralnet
         //cnnLayerAmount includes Convolution, reLu, and pooling.
         //if cnn never reaches transition and runs out of kernels,
         //user should also be notified of this occurence.
-        public double[] GeneralCNN(double[,,] inputData, int cnnLayerAmount) 
+        private double[] GeneralCNN(double[,,] inputData, int cnnLayerAmount, int this.finalOutputSize) 
         {
-            int elementAmount = inputData.GetLength(0)*inputData.GetLength(1)*inputData.GetLength(2); 
-            while(elementAmount < this.transitionElementAmount)
+            int elementAmount = inputData.GetLength(0)*inputData.GetLength(1)*inputData.GetLength(2);
+            int kernelListCounter = 0; 
+            while(elementAmount < this.transitionElementAmount && kernelListCounter < convLayerKernels.Capacity)
             {
                 //reassign elementAmount after convolution and pooling
+                
             }
+            //FCLayerSizes is assigned values.
+            Random random = new Random();//used for weights and biases once FCNN specs are known.
             //gonna use two layers for fully connected portion.
         }
     }
