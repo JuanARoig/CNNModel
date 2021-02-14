@@ -10,7 +10,7 @@ namespace neuralnet
         //User is allowed to enter amount of kernels to be used.
         //If the network is forced to transition before all kernels are used,
         //user will be notified.
-        //cnnLayerAmount includes Convolution, reLu, and pooling.
+        //cnn includes Convolution, reLu, and pooling.
         //if cnn never reaches transition and runs out of kernels,
         //user should also be notified of this occurence.
         private double[] GeneralCNN(double[,,] inputData, int cnnLayerAmount, int this.finalOutputSize) 
@@ -23,7 +23,7 @@ namespace neuralnet
                 
             }
             //FCLayerSizes is assigned values.
-            Random random = new Random();//used for weights and biases once FCNN specs are known.
+            Random random = new Random(this.seed);//used for weights and biases once FCNN specs are known.
             //gonna use two layers for fully connected portion.
         }
     }
