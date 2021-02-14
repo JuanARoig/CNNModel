@@ -7,6 +7,9 @@ namespace neuralnet
 {
     partial class ConvolutionalNN
     {
-        public double[] GeneralCNN() { }//inquire about usage of kernels.
+        public double[] GeneralCNN() 
+        { 
+            
+        }
     }
 }
