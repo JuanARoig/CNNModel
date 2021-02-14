@@ -8,12 +8,16 @@ namespace neuralnet{
 	partial class ConvolutionalNN
 	{
 		public ConvolutionalNN ConvolutionalNN() { }
-		public ConvolutionalNN ConvolutionalNN(int[,] kernelSizes, int transitionElementAmount)//kernelSizes j-hat sizes should be of size 3.
+		//kernelSizes j-hat sizes should be of size 3. This is not a 4d convolutional network.
+		public ConvolutionalNN ConvolutionalNN(int[,] kernelSizes, int transitionElementAmount)
 		{
+			Random random = new Random();
 			this.kernelSizes = kernelSizes;
 			this.transitionElementAmount = transitionElementAmount;
-			//when dimensions fall below the transitionDimensions, network will transition from
+			//when element amount falls below the transitionElementAmount, network will transition from
 			//convolutional to fully connected.
+
+			
 		}	
 	}
 }
