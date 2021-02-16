@@ -7,7 +7,7 @@ namespace neuralnet
 {
     partial class ConvolutionalNN
     {
-        private double[,,] ConvolutionProduct(double[,,] tensor1, double[,,] kernel) 
+        private double[,,] ConvolutionOperation(double[,,] tensor1, double[,,] kernel) 
 	    {	
 	    	sizeI = 0;
 	    	sizeJ = 0;

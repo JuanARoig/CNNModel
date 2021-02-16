@@ -20,7 +20,20 @@ namespace neuralnet
             while(elementAmount < this.transitionElementAmount && kernelListCounter < convLayerKernels.Capacity)
             {
                 //reassign elementAmount after convolution and pooling
-                
+                int kernelIndex = 0;
+                int convLayerIndex = 0;
+                this.convLayerNetwork.Add(inputData);
+                while ((current.GetLength(0)*current.GetLength(1)*current.GetLength(2) < transitionElementAmount) 
+                && kernelIndex < convLayerKernels.Capacity)
+                {
+                    double[,,] currentKernel = convLayerKernels[kernelIndex];
+                    double[,,] current = convLayerNetwork[convLayerIndex];
+                    double[] currentKernelDimensions = new double[] { currentKernel.GetLength(0), 
+                                                                      currentKernel.GetLength(1),
+                                                                      currentKernel.GetLength(2) }
+                    this.convLayerNetwork.Add(MaxPoolingOperation(ConvolutionOperation(current, currentKernel),
+                                                                                       currentKernelDimensions));
+                }
             }
             //FCLayerSizes is assigned values.
             Random random = new Random(this.seed);//used for weights and biases once FCNN specs are known.
