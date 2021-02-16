@@ -37,6 +37,10 @@ namespace neuralnet
             }
             //FCLayerSizes is assigned values.
             Random random = new Random(this.seed);//used for weights and biases once FCNN specs are known.
+            finalTensor = this.convLayerNetwork[this.convLayerNetwork.Capacity - 1];
+            int outVecSize = finalTensor.GetLength(0)*finalTensor.GetLength(1)*finalTensor.GetLength(2);
+            double[] outVector = new double[outVecSize];
+            
             //gonna use two layers for fully connected portion.
         }
     }

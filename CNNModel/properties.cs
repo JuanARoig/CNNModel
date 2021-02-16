@@ -18,7 +18,6 @@ namespace neuralnet
 
         private List<double[]> biasupdates;
         private List<double[,]> weightsupdates;
-
         //Convolutional Neural Net Properties
         private int transitionElementAmount;//Dimensions boundary in order to transition to FCNN.
         private int[,] kernelSizes;//kernel1Size is the cubic dimensions of the kernel. j-hat should be of size 3.
