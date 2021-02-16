@@ -83,6 +83,8 @@ namespace neuralnet{
 				elems = sizeFinalI*sizeFinalJ*sizeFinalK;
 				kernelIndex++;
 			}
+			this.finalOutputSize = sizeFinalI*sizeFinalJ*sizeFinalK;
+			
 		}	
 	}
 }
