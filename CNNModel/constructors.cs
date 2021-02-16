@@ -8,7 +8,7 @@ namespace neuralnet{
 	partial class ConvolutionalNN
 	{
 		public ConvolutionalNN ConvolutionalNN() { }
-		public ConvolutionalNN ConvolutionalNN(int[,] kernelSizes, int transitionElementAmount, int finalOutputSize, int seed)
+		public ConvolutionalNN ConvolutionalNN(double[,,] inputData, int[,] kernelSizes, int transitionElementAmount, int finalOutputSize, int seed)
 		{
 			if (kernel1Size[0] > 3)
 			{
@@ -44,6 +44,44 @@ namespace neuralnet{
 						}
 					}
 				}
+			}
+			int kernelIndex = 0;
+			int sizeI = inputData.GetLength(0);
+			int sizeJ = inputData.GetLength(1);
+			int sizeK = inputData.GetLength(2);
+			int elems = inputData.GetLength(0)*inputData.GetLength(1)*inputData.GetLength(2);
+			int sizeFinalI = 0;
+			int sizeFinalJ = 0;
+			int sizeFinalK = 0;
+			while(elems < this.transitionElementAmount && kernelIndex < convLayerKernels.Capacity)
+			{
+				kernel = this.convLayerKernels[kernelIndex];
+				if (sizeI - kernel.GetLength(0) == 1) 
+	    		{
+	    			sizeFinalI += 2;
+	    		} 
+	    		else 
+	    		{
+	    			sizeFinalI += (-kernel.GetLength(0)) + 1;sizeI
+	    		}
+	    		if (sizeJ - kernel.GetLength(1) == 1)
+	    		{
+	    			sizeFinalJ += 2;
+	    		}
+	    		else
+	    		{
+	    			sizeJ += (sizeJ - kernel.GetLength(1)) + 1;
+	    		}
+	    		if (sizeK - kernel.GetLength(2) == 1)
+	    		{
+	    			sizeFinalK += 2;
+	    		}
+	    		else
+	    		{
+	    			sizeFinalK += (sizeK - kernel.GetLength(2)) + 1;
+	    		}
+				elems = sizeFinalI*sizeFinalJ*sizeFinalK;
+				kernelIndex++;
 			}
 		}	
 	}
