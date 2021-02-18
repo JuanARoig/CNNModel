@@ -36,10 +36,8 @@ namespace neuralnet
                                                                                        currentKernelDimensions));
                 }
             }
-            //FCLayerSizes is assigned values.
-
-
-            //gonna use two layers for fully connected portion.
+            
+            
         }
     }
 }

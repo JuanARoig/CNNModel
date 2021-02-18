@@ -9,7 +9,7 @@ namespace neuralnet
     {
         //Fully Connected Neural Net Classifier Properties
         public int seed { get; set; }
-	    private int FCLayerAmount = 2;
+	    public int FCLayerAmount { get; set; }
         private int finalOutputSize;
 	    private int[] FCLayerSizes;//instantiated after cnnlayers completed.
 

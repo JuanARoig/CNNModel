@@ -8,6 +8,7 @@ namespace neuralnet{
 	partial class ConvolutionalNN
 	{
 		public ConvolutionalNN ConvolutionalNN() { }
+
 		public ConvolutionalNN ConvolutionalNN(double[,,] inputData, int[,] kernelSizes, int transitionElementAmount, int finalOutputSize, int seed)
 		{
 			if (kernel1Size[0] > 3)
