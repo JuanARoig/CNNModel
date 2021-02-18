@@ -84,8 +84,17 @@ namespace neuralnet{
 				elems = sizeFinalI*sizeFinalJ*sizeFinalK;
 				kernelIndex++;
 			}
-			this.finalOutputSize = sizeFinalI*sizeFinalJ*sizeFinalK;
-			
+			this.transitionElementAmount = sizeFinalI*sizeFinalJ*sizeFinalK;
+			//a clean relationship between transitionElementAmount and finalOutputSize
+			//may not be possible in some cases. Draw it out on paper before continuing.
+			if ((this.transitionElementAmount - this.finalOutputSize) % this.FCLayerAmount == 0)
+			{
+				int elementCountChange = (this.transitionElementAmount - this.finalOutputSize)/this.FCLayerAmount;
+			}
+			else
+			{
+				
+			}
 		}	
 	}
 }
