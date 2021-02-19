@@ -86,49 +86,42 @@ namespace neuralnet{
 			}
 			this.transitionElementAmount = sizeFinalI*sizeFinalJ*sizeFinalK;
 			//a clean relationship between transitionElementAmount and finalOutputSize
-			//may not be possible in some cases. Draw it out on paper before continuing.
-			if ((this.transitionElementAmount - this.finalOutputSize - 1) % this.FCLayerAmount == 0)
+			//if not required, auto-compensates.
+			int elementCountChange = (this.transitionElementAmount - this.finalOutputSize)/this.FCLayerAmount;
+			this.FCLayerSizes = new double[this.FCLayerAmount];
+			this.FCLayerSizes[0] = this.transitionElementAmount;
+			this.FCLayerSizes[this.FCLayerSizes.Length - 1] = this.finalOutputSize;
+			int startSize = this.transitionElementAmount;
+			for (int i = 1; i < this.FCLayerSizes.Length - 1; i++)
 			{
-				int elementCountChange = (this.transitionElementAmount - this.finalOutputSize)/this.FCLayerAmount;
-				this.FCLayerSizes = new double[this.FCLayerAmount];
-				this.FCLayerSizes[0] = this.transitionElementAmount;
-				this.FCLayerSizes[this.FCLayerSizes.Length - 1] = this.finalOutputSize;
-				int startSize = this.transitionElementAmount;
-				for (int i = 1; i < this.FCLayerSizes.Length - 1; i++)
+				startSize -= elementCountChange;
+				this.FCLayerSizes[i] = startSize;
+			}
+			for (int i = 1; i < this.FCLayerSizes.Length; i++)
+			{
+				this.biases.Add(new double[i]);
+			}
+			for (int i = 1, j = 0; i++, j++; i < this.FCLayerSizes.Length, j < this.FCLayerSizes.Length-1)
+			{
+				this.weights.Add(new double[this.FCLayerSizes[i],this.FCLayerSizes[j]]);
+			}
+			foreach (double[] biasVector in this.biases)
+			{
+				for (int i = 0; i < biasVector.Length; i++)
 				{
-					startSize -= elementCountChange;
-					this.FCLayerSizes[i] = startSize;
-				}
-				for (int i = 1; i < this.FCLayerSizes.Length; i++)
-				{
-					this.biases.Add(new double[i]);
-				}
-				for (int i = 1, j = 0; i++, j++; i < this.FCLayerSizes.Length, j < this.FCLayerSizes.Length-1)
-				{
-					this.weights.Add(new double[this.FCLayerSizes[i],this.FCLayerSizes[j]]);
-				}
-				foreach (double[] biasVector in this.biases)
-				{
-					for (int i = 0; i < biasVector.Length; i++)
-					{
-						biasVector[i] = random.NextDouble();
-					}
-				}
-				foreach (double[,] weightsMatrix in this.weights)
-				{
-					for (int i = 0; i < weightsMatrix.GetLength(0); i++)
-					{
-						for (int j = 0; j < weightsMatrix.GetLength(1); j++)
-						{
-							weightsMatrix[i, j] = random.NextDouble();
-						}
-					}
+					biasVector[i] = random.NextDouble();
 				}
 			}
-			else
+			foreach (double[,] weightsMatrix in this.weights)
 			{
-				
-			}
+				for (int i = 0; i < weightsMatrix.GetLength(0); i++)
+				{
+					for (int j = 0; j < weightsMatrix.GetLength(1); j++)
+					{
+						weightsMatrix[i, j] = random.NextDouble();
+					}
+				}
+			}			
 		}	
 	}
 }
