@@ -7,7 +7,6 @@ namespace neuralnet
 {
     partial class ConvolutionalNN
     {
-        //cross entropy
         //mean squared error
     }
 }
