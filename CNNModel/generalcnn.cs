@@ -39,6 +39,33 @@ namespace neuralnet
             }
             //converting 3d tensor to 1d vector
             double[] transitionVector = new double[current.GetLength(0)*current.GetLength(1)*current.GetLength(2)];
+            double[,,] transitionTensor = current[current.Capacity - 1];
+            int transitionAccum = 0;
+            for (int i = 0; i < current[current.Capacity - 1].GetLength(0); i++)
+            {
+                for (int j = 0; j < current[current.Capacity - 1].GetLength(1); j++)
+                {
+                    for (int k = 0; k < current[current.Capacity - 1].GetLength(2); k++)
+                    {
+                        transitionVector[transitionAccum] = transitionTensor[i, j, k];
+                        transitionAccum++;
+                    }
+                }
+            }
+            double[] currentLayer;
+            for (int i = 0; i < this.weights.Capacity; i++)
+            {
+                if(i == 0)
+                {
+                    currentLayer = this.Add(MatrixVectorProduct(weights[i], transitionVector), biases[i]);
+                }
+                else
+                {
+                    currentLayer = this.Add(MatrixVectorProduct(weights[i], currentLayer), biases[i]);
+                }
+            }
+            finalLayer = currentLayer;
+            return finalLayer;
         }
     }
 }
