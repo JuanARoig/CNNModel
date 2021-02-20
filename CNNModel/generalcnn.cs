@@ -13,7 +13,7 @@ namespace neuralnet
         //cnn includes Convolution, reLu, and pooling.
         //if cnn never reaches transition and runs out of kernels,
         //user should also be notified of this occurence.
-        private double[] GeneralCNN(double[,,] inputData, int cnnLayerAmount, int this.finalOutputSize) 
+        private double[] GeneralCNN(double[,,] inputData) 
         {
             int elementAmount = inputData.GetLength(0)*inputData.GetLength(1)*inputData.GetLength(2);
             int kernelListCounter = 0; 
@@ -25,7 +25,7 @@ namespace neuralnet
                 int convLayerIndex = 0;
                 this.convLayerNetwork.Add(inputData);
                 current = convLayerNetwork[convLayerIndex];//first time
-                while ((current.GetLength(0)*current.GetLength(1)*current.GetLength(2) < transitionElementAmount) 
+                while ((current.GetLength(0)*current.GetLength(1)*current.GetLength(2) < this.transitionElementAmount) 
                 && kernelIndex < convLayerKernels.Capacity)
                 {
                     double[,,] currentKernel = convLayerKernels[kernelIndex];
