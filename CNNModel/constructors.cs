@@ -84,9 +84,16 @@ namespace neuralnet{
 				elems = sizeFinalI*sizeFinalJ*sizeFinalK;
 				kernelIndex++;
 			}
+			//popping unnecessary kernels
+			if(kernelIndex < convLayerKernels.Capacity)
+			{
+				for (int i = kernelIndex; i < convLayerKernels.Capacity; i++)
+				{
+					convLayerKernels.RemoveAt(i);
+				}
+			}
+			
 			this.transitionElementAmount = sizeFinalI*sizeFinalJ*sizeFinalK;
-			//a clean relationship between transitionElementAmount and finalOutputSize
-			//if not required, auto-compensates.
 			int elementCountChange = (this.transitionElementAmount - this.finalOutputSize)/this.FCLayerAmount;
 			this.FCLayerSizes = new double[this.FCLayerAmount];
 			this.FCLayerSizes[0] = this.transitionElementAmount;
