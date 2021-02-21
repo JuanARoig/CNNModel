@@ -66,6 +66,7 @@ namespace neuralnet
             double affected = this.MeanSquaredCost(inputData, expectedOutput);
             targetWeights[arrpos1, arrpos2] -= r;
             double final = (affected - original)/r;
+            return final;
         }
         private double MSEDerivBiases(double[,,] inputData, double[] expectedOutput, int listpos, int arrpos) 
         { 
