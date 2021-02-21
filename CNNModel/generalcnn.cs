@@ -7,12 +7,6 @@ namespace neuralnet
 {
     partial class ConvolutionalNN
     {
-        //User is allowed to enter amount of kernels to be used.
-        //If the network is forced to transition before all kernels are used,
-        //user will be notified.
-        //cnn includes Convolution, reLu, and pooling.
-        //if cnn never reaches transition and runs out of kernels,
-        //user should also be notified of this occurence.
         private double[] GeneralCNN(double[,,] inputData) 
         {
             int elementAmount = inputData.GetLength(0)*inputData.GetLength(1)*inputData.GetLength(2);
