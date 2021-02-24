@@ -14,7 +14,6 @@ namespace neuralnet
             {
                 foreach(double[,,] inputData, double[] expectedOutput in inputDataList, outputDataList)
                 {
-                
                     double original = this.CrossEntropyLoss(inputData, expectedOutput);
                     for (int x = 0; x < this.convLayerKernels.Capacity; x++)
                     {
@@ -50,15 +49,15 @@ namespace neuralnet
                         }
                     }
                 }
+                learningRate *= 0.985;
             }
         }
-        public void MeanSquaredTraining(List<double[]> inputDataList, List<double[]> outputDataList)
+        public void MeanSquaredTraining(double learningRate, List<double[]> inputDataList, List<double[]> outputDataList)
         {
             for (int l = 0; l < 15; l++)
             {
                 foreach(double[,,] inputData, double[] expectedOutput in inputDataList, outputDataList)
                 {
-            
                     double original = this.MeanSquaredCost(inputData, expectedOutput);
                     for (int x = 0; x < this.convLayerKernels.Capacity; x++)
                     {
@@ -94,6 +93,7 @@ namespace neuralnet
                         }
                     }
                 }
+                learningRate *= 0.985
             }
         }
     }
