@@ -8,9 +8,9 @@ namespace neuralnet
     partial class ConvolutionalNN
     {
         //use partialderivs to implement gradient descent in backpropagation
-        public void CrossEntropyTraining(double learningRate, List<double[,,]> inputDataList, List<double[]> outputDataList)
+        public void CrossEntropyTraining(int reps, double learningRate, double lrMult, List<double[,,]> inputDataList, List<double[]> outputDataList)
         {
-            for (int l = 0; l < 15; l++)
+            for (int l = 0; l < reps; l++)
             {
                 foreach(double[,,] inputData, double[] expectedOutput in inputDataList, outputDataList)
                 {
@@ -49,12 +49,12 @@ namespace neuralnet
                         }
                     }
                 }
-                learningRate *= 0.985;
+                learningRate *= lrMult;
             }
         }
-        public void MeanSquaredTraining(double learningRate, List<double[]> inputDataList, List<double[]> outputDataList)
+        public void MeanSquaredTraining(int reps, double learningRate, double lrMult, List<double[]> inputDataList, List<double[]> outputDataList)
         {
-            for (int l = 0; l < 15; l++)
+            for (int l = 0; l < reps; l++)
             {
                 foreach(double[,,] inputData, double[] expectedOutput in inputDataList, outputDataList)
                 {
@@ -93,7 +93,7 @@ namespace neuralnet
                         }
                     }
                 }
-                learningRate *= 0.985
+                learningRate *= lrMult;
             }
         }
     }

@@ -128,7 +128,8 @@ namespace neuralnet{
 						weightsMatrix[i, j] = random.NextDouble();
 					}
 				}
-			}			
+			}
+			//initialize weights/biases/kernels updates below			
 		}	
 	}
 }
