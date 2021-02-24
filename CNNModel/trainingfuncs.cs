@@ -24,7 +24,7 @@ namespace neuralnet
                             {
                                 for (int k = 0; k < currentKernel.GetLength(2); k++)
                                 {
-                                
+                                    
                                 }
                             }
                         }
@@ -36,7 +36,7 @@ namespace neuralnet
                         {
                             for (int j = 0; j < currentWeights.GetLength(1); j++)
                             {
-
+                                
                             }
                         }
                     }
@@ -45,7 +45,7 @@ namespace neuralnet
                         double[] currentBiases = this.biases[x];
                         for (int i = 0; i < currentBiases.Length; i++)
                         {
-
+                            
                         }
                     }
                 }
@@ -89,7 +89,7 @@ namespace neuralnet
                         double[] currentBiases = this.biases[x];
                         for (int i = 0; i < currentBiases.Length; i++)
                         {
-
+                            
                         }
                     }
                 }

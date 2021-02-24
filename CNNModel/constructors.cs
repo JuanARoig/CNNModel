@@ -129,7 +129,27 @@ namespace neuralnet{
 					}
 				}
 			}
-			//initialize weights/biases/kernels updates below			
+			this.convLayerKernelUpdates = new List<double[,,]>();
+			this.weightsupdates = new List<double[,]>();
+			this.biasupdates = new List<double[]>();
+			for(int x = 0; x < this.convLayerKernels.Capacity; x++)
+			{
+				double[,,] currentFormat = this.convLayerKernels[x];
+				this.convLayerKernelUpdates.Add(new double[currentFormat.GetLength(0),
+													  currentFormat.GetLength(1),
+													  currentFormat.GetLength(2)]);	
+			}
+			for (int x = 0; x < this.weights.Capacity; x++)
+			{
+				double[,] currentFormat = this.weights[x];
+				this.weightsupdates.Add(new double[currentFormat.GetLength(0),
+										   currentFormat.GetLength(1)]);
+			}
+			for (int x = 0; x < this.biases.Capacity; x++)
+			{
+				double[] currentFormat = this.biases[x];
+				this.biasupdates.Add(new double[currentFormat.Length]);
+			}	
 		}	
 	}
 }
