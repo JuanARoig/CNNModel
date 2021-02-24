@@ -18,13 +18,17 @@ namespace neuralnet
                     for (int x = 0; x < this.convLayerKernels.Capacity; x++)
                     {
                         double[,,] currentKernel = this.convLayerKernels[x];
+                        double[,,] kernelUpdateTensor = new double[currentKernel.GetLength(0),
+                                                                   currentKernel.GetLength(1),
+                                                                   currentKernel.GetLength(2)];
+                        this.convLayerKernelUpdates[x] = kernelUpdateTensor;  
                         for (int i = 0; i < currentKernel.GetLength(0); i++)
                         {
                             for (int j = 0; j < currentKernel.GetLength(1); j++)
                             {
                                 for (int k = 0; k < currentKernel.GetLength(2); k++)
                                 {
-                                    
+                                    kernelUpdateTensor[i, j, k] = (-1*learningRate*this.CEPDerivKernels(original, inputData, expectedOutput, x, i, j, k));
                                 }
                             }
                         }
