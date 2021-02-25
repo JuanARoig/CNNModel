@@ -51,11 +51,11 @@ namespace neuralnet
             {
                 if(i == 0)
                 {
-                    currentLayer = this.Add(MatrixVectorProduct(weights[i], transitionVector), biases[i]);
+                    currentLayer = this.Add(SoftmaxOperation(MatrixVectorProduct(weights[i], transitionVector), biases[i]));
                 }
                 else
                 {
-                    currentLayer = this.Add(MatrixVectorProduct(weights[i], currentLayer), biases[i]);
+                    currentLayer = this.Add(SoftmaxOperation(MatrixVectorProduct(weights[i], currentLayer), biases[i]));
                 }
             }
             finalLayer = currentLayer;
