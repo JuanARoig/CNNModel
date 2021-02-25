@@ -27,8 +27,8 @@ namespace neuralnet
                     double[] currentKernelDimensions = new double[] { currentKernel.GetLength(0), 
                                                                       currentKernel.GetLength(1),
                                                                       currentKernel.GetLength(2) }
-                    this.convLayerNetwork.Add(MaxPoolingOperation(ConvolutionOperation(current, currentKernel),
-                                                                                       currentKernelDimensions));
+                    this.convLayerNetwork.Add(REluOperation(MaxPoolingOperation(ConvolutionOperation(current, currentKernel),
+                                                                                       currentKernelDimensions)));
                 }
             }
             //converting 3d tensor to 1d vector
