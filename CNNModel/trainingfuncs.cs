@@ -7,7 +7,7 @@ namespace neuralnet
 {
     partial class ConvolutionalNN
     {
-        //use partialderivs to implement gradient descent in backpropagation
+        //GD = Gradient Descent. Stochastic GD and Adam may be written later.
         public void CrossEntropyGDTraining(int reps, double learningRate, double lrMult, List<double[,,]> inputDataList, List<double[]> outputDataList)
         {
             for (int l = 0; l < reps; l++)
