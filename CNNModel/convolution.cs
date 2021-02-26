@@ -9,6 +9,10 @@ namespace neuralnet
     {
         private double[,,] ConvolutionOperation(double[,,] tensor1, double[,,] kernel) 
 	    {	
+			if (tensor1.GetLength(0) <= prevKernelDimensions[0] || tensor1.GetLength(1) <= prevKernelDimensions[1] || tensor1.GetLength(2) <= prevKernelDimensions[2])
+			{
+				throw new Exception("Tensor dims collapsed too quickly.");
+			}
 	    	sizeI = 0;
 	    	sizeJ = 0;
 	    	sizeK = 0;
