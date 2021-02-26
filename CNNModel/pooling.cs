@@ -9,34 +9,38 @@ namespace neuralnet
     {
         private double[,,] AvgPoolingOperation(double[,,] inputTensor, double[] prevKernelDimensions) 
         { 
+			if (inputTensor.GetLength(0) <= prevKernelDimensions[0] || inputTensor.GetLength(1) <= prevKernelDimensions[1] || inputTensor.GetLength(2) <= prevKernelDimensions[2])
+			{
+				throw new Exception("Tensor dims collapsed too quickly.");
+			}
             sizeI = 0;
 	    	sizeJ = 0;
 	    	sizeK = 0;
 
             //the dimensions of the resulting tensor are funky.
-	    	if (tensor1.GetLength(0) - prevKernelDimensions[0] == 1) 
+	    	if (inputTensor.GetLength(0) - prevKernelDimensions[0] == 1) 
 	    	{
 	    		sizeI += 2;
 	    	} 
 	    	else 
 	    	{
-	    		sizeI += (tensor1.GetLength(0)-prevKernelDimensions[0]) + 1;
+	    		sizeI += (inputTensor.GetLength(0)-prevKernelDimensions[0]) + 1;
 	    	}
-	    	if (tensor1.GetLength(1) - prevKernelDimensions[1] == 1)
+	    	if (inputTensor.GetLength(1) - prevKernelDimensions[1] == 1)
 	    	{
 	    		sizeJ += 2;
 	    	}
 	    	else
 	    	{
-	    		sizeJ += (tensor1.GetLength(1) - prevKernelDimensions[1]) + 1;
+	    		sizeJ += (inputTensor.GetLength(1) - prevKernelDimensions[1]) + 1;
 	    	}
-	    	if (tensor1.GetLength(2) - prevKernelDimensions[2] == 1)
+	    	if (inputTensor.GetLength(2) - prevKernelDimensions[2] == 1)
 	    	{
 	    		sizeK += 2;
 	    	}
 	    	else
 	    	{
-	    		sizeK += (tensor1.GetLength(2) - prevKernelDimensions[2]) + 1;
+	    		sizeK += (inputTensor.GetLength(2) - prevKernelDimensions[2]) + 1;
 	    	}
 
 	    	double[,,] tensorFinal = new double[sizeI,sizeJ,sizeK];
@@ -51,11 +55,11 @@ namespace neuralnet
 		    	}
 	    	}
 
-            for(int i = 0; i < tensor1.GetLength(0) - prevKernelDimensions[0] - 1; i++)
+            for(int i = 0; i < inputTensor.GetLength(0) - prevKernelDimensions[0] - 1; i++)
 	    	{
-			    for(int j = 0; j < tensor1.GetLength(1) - prevKernelDimensions[1] - 1; j++)
+			    for(int j = 0; j < inputTensor.GetLength(1) - prevKernelDimensions[1] - 1; j++)
 		    	{
-				    for(int k = 0; k < tensor1.GetLength(2) - prevKernelDimensions[2] - 1; k++)
+				    for(int k = 0; k < inputTensor.GetLength(2) - prevKernelDimensions[2] - 1; k++)
 				    {
 					    int startA = i;
 					    int startB = j;
@@ -82,34 +86,38 @@ namespace neuralnet
         }
 	    private double[,,] MaxPoolingOperation(double[,,] inputTensor, double[] prevKernelDimensions) 
         { 
+			if (inputTensor.GetLength(0) <= prevKernelDimensions[0] || inputTensor.GetLength(1) <= prevKernelDimensions[1] || inputTensor.GetLength(2) <= prevKernelDimensions[2])
+			{
+				throw new Exception("Tensor dims collapsed too quickly.");
+			}
             sizeI = 0;
 	    	sizeJ = 0;
 	    	sizeK = 0;
 
             //the dimensions of the resulting tensor are funky.
-	    	if (tensor1.GetLength(0) - prevKernelDimensions[0] == 1) 
+	    	if (inputTensor.GetLength(0) - prevKernelDimensions[0] == 1) 
 	    	{
 	    		sizeI += 2;
 	    	} 
 	    	else 
 	    	{
-	    		sizeI += (tensor1.GetLength(0)-prevKernelDimensions[0]) + 1;
+	    		sizeI += (inputTensor.GetLength(0)-prevKernelDimensions[0]) + 1;
 	    	}
-	    	if (tensor1.GetLength(1) - prevKernelDimensions[1] == 1)
+	    	if (inputTensor.GetLength(1) - prevKernelDimensions[1] == 1)
 	    	{
 	    		sizeJ += 2;
 	    	}
 	    	else
 	    	{
-	    		sizeJ += (tensor1.GetLength(1) - prevKernelDimensions[1]) + 1;
+	    		sizeJ += (inputTensor.GetLength(1) - prevKernelDimensions[1]) + 1;
 	    	}
-	    	if (tensor1.GetLength(2) - prevKernelDimensions[2] == 1)
+	    	if (inputTensor.GetLength(2) - prevKernelDimensions[2] == 1)
 	    	{
 	    		sizeK += 2;
 	    	}
 	    	else
 	    	{
-	    		sizeK += (tensor1.GetLength(2) - prevKernelDimensions[2]) + 1;
+	    		sizeK += (inputTensor.GetLength(2) - prevKernelDimensions[2]) + 1;
 	    	}
 
 	    	double[,,] tensorFinal = new double[sizeI,sizeJ,sizeK];
@@ -124,11 +132,11 @@ namespace neuralnet
 		    	}
 	    	}
 
-            for(int i = 0; i < tensor1.GetLength(0) - prevKernelDimensions[0] - 1; i++)
+            for(int i = 0; i < inputTensor.GetLength(0) - prevKernelDimensions[0] - 1; i++)
 	    	{
-			    for(int j = 0; j < tensor1.GetLength(1) - prevKernelDimensions[1] - 1; j++)
+			    for(int j = 0; j < inputTensor.GetLength(1) - prevKernelDimensions[1] - 1; j++)
 		    	{
-				    for(int k = 0; k < tensor1.GetLength(2) - prevKernelDimensions[2] - 1; k++)
+				    for(int k = 0; k < inputTensor.GetLength(2) - prevKernelDimensions[2] - 1; k++)
 				    {
 					    int startA = i;
 					    int startB = j;
