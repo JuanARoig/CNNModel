@@ -7,9 +7,9 @@ namespace neuralnet
 {
     partial class ConvolutionalNN
     {
-        private double[,,] ConvolutionOperation(double[,,] tensor1, double[,,] kernel) 
+        private double[,,] ConvolutionOperation(double[,,] inputTensor, double[,,] kernel) 
 	    {	
-			if (tensor1.GetLength(0) <= prevKernelDimensions[0] || tensor1.GetLength(1) <= prevKernelDimensions[1] || tensor1.GetLength(2) <= prevKernelDimensions[2])
+			if (inputTensor.GetLength(0) <= kernel.GetLength(0) || inputTensor.GetLength(1) <= kernel.GetLength(1) || inputTensor.GetLength(2) <= kernel.GetLength(2))
 			{
 				throw new Exception("Tensor dims collapsed too quickly.");
 			}
@@ -18,29 +18,29 @@ namespace neuralnet
 	    	sizeK = 0;
 
             //the dimensions of the resulting tensor are funky.
-	    	if (tensor1.GetLength(0) - kernel.GetLength(0) == 1) 
+	    	if (inputTensor.GetLength(0) - kernel.GetLength(0) == 1) 
 	    	{
 	    		sizeI += 2;
 	    	} 
 	    	else 
 	    	{
-	    		sizeI += (tensor1.GetLength(0)-kernel.GetLength(0)) + 1;
+	    		sizeI += (inputTensor.GetLength(0)-kernel.GetLength(0)) + 1;
 	    	}
-	    	if (tensor1.GetLength(1) - kernel.GetLength(1) == 1)
+	    	if (inputTensor.GetLength(1) - kernel.GetLength(1) == 1)
 	    	{
 	    		sizeJ += 2;
 	    	}
 	    	else
 	    	{
-	    		sizeJ += (tensor1.GetLength(1) - kernel.GetLength(1)) + 1;
+	    		sizeJ += (inputTensor.GetLength(1) - kernel.GetLength(1)) + 1;
 	    	}
-	    	if (tensor1.GetLength(2) - kernel.GetLength(2) == 1)
+	    	if (inputTensor.GetLength(2) - kernel.GetLength(2) == 1)
 	    	{
 	    		sizeK += 2;
 	    	}
 	    	else
 	    	{
-	    		sizeK += (tensor1.GetLength(2) - kernel.GetLength(2)) + 1;
+	    		sizeK += (inputTensor.GetLength(2) - kernel.GetLength(2)) + 1;
 	    	}
 
 	    	double[,,] tensorFinal = new double[sizeI,sizeJ,sizeK];
@@ -55,11 +55,11 @@ namespace neuralnet
 		    	}
 	    	}
 		
-	    	for(int i = 0; i < tensor1.GetLength(0) - kernel.GetLength(0) - 1; i++)
+	    	for(int i = 0; i < inputTensor.GetLength(0) - kernel.GetLength(0) - 1; i++)
 	    	{
-			    for(int j = 0; j < tensor1.GetLength(1) - kernel.GetLength(1) - 1; j++)
+			    for(int j = 0; j < inputTensor.GetLength(1) - kernel.GetLength(1) - 1; j++)
 		    	{
-				    for(int k = 0; k < tensor1.GetLength(2) - kernel.GetLength(2) - 1; k++)
+				    for(int k = 0; k < inputTensor.GetLength(2) - kernel.GetLength(2) - 1; k++)
 				    {
 					    int startA = i;
 					    int startB = j;
@@ -73,7 +73,7 @@ namespace neuralnet
 						    {
 							    for (int c = k; c < startC + t; c++)
 						    	{
-							    	tensorFinal[i, j, k] += tensor1[a, b, c]*kernel[a-startA, b-startB, c-startC];
+							    	tensorFinal[i, j, k] += inputTensor[a, b, c]*kernel[a-startA, b-startB, c-startC];
 							    }
 						    }
 					    }				
