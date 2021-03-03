@@ -3,47 +3,63 @@ using Xunit;
 
 namespace CNNModel.Tests
 {
-    public class CNNTests
+    public class CNNTests : CNNModel
     {
-    	[Fact]
+
+    	[Theory]
     	public void ConvolutionTest(double[,,] testInputTensor, double[,,] testKernel)
     	{
 		
     	}
-		[Fact]
+		[Theory]
 		public void AvgPoolingTest(double[,,] testInputTensor, double[] testPrevKernelDimensions)
 		{
 
 		}
-		[Fact]
+		[Theory]
 		public void MaxPoolingTest(double[,,] testInputTensor, double[] testPrevKernelDimensions)
 		{
 
 		}
-		[Fact]
-		public void REluTest(double[,,] testInput)
+		public static IEnumerable<object[]> GetTestInput()
 		{
-
+			double[,,] test = {{{2, 2}}};
+			double[,,] test2 = {{{2},{6},{6}},{{6}, {6}, {6}}};
+			yield return new object[] { test };
+			yield return new object[] { test2 };
+		}
+		[Theory]
+		[MemberData(nameof(GetTestInput()))]
+		public void RElu_Evaluates(double[,,] testInput)
+		{
+			Assert.True(REluOperation(testInput) != null);
 		}
 		[Fact]
+		public void RElu_Throws_Exception()
+		{
+			double[,,] test = {{{}}};
+			Assert.Throws<Exception>(() => REluOperation(test));
+		}
+		[Theory]
 		public void SoftmaxTest(double[] testInput)
 		{
 			
 		}
-		[Fact]
+		[Theory]
 		public void MatrixVectorProductTest(double[] testInput)
 		{
 			
 		}
-		[Fact]
+		[Theory]
 		public void AddTest(double[] testInput)
 		{
 			
 		}
-		[Fact]
+		[Theory]
+		[MemberData(nameof()]
 		public void GeneralCNN(double[,,] testInput)
 		{
-			
+
 		}
     }
 }

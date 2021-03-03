@@ -9,6 +9,10 @@ namespace neuralnet
     {
         private double[,,] REluOperation(double[,,] inputTensor)
         {
+            if (inputTensor == null)
+            {
+                throw new Exception("Null tensor");
+            }
             double[,,] final = new double[inputTensor.GetLength(0), inputTensor.GetLength(1), inputTensor.GetLength(2)];
             for (int i = 0; i < inputTensor.GetLength(0); i++)
             {
