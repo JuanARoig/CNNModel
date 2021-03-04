@@ -36,6 +36,10 @@ namespace neuralnet
   
         private double[] SoftmaxOperation(double[] inputVector)//activation function for fully connected portion
         {
+            if(inputVector.Length == 0)
+            {
+                throw new Exception("Null vector");
+            }
             sum = 0;
             double[] final = new double[inputVector.Length];
             for (int i = 0; i < inputVector.Length; i++)
