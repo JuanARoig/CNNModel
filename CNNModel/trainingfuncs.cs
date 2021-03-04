@@ -58,7 +58,7 @@ namespace neuralnet
                 this.biases = this.biasupdates;
             }
         }
-        public void MeanSquaredGDTraining(int reps, double learningRate, double lrMult, List<double[]> inputDataList, List<double[]> outputDataList)
+        public void MeanSquaredGDTraining(int reps, double learningRate, double lrMult, List<double[,,]> inputDataList, List<double[]> outputDataList)
         {
             for (int l = 0; l < reps; l++)
             {
