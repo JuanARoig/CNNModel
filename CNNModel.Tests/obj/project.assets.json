@@ -1648,6 +1648,16 @@
         "build": {
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
+      },
+      "CNNModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/CNNModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CNNModel.dll": {}
+        }
       }
     }
   },
@@ -5611,10 +5621,16 @@
         "xunit.runner.visualstudio.2.4.3.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "CNNModel/1.0.0": {
+      "type": "project",
+      "path": "../CNNModel/CNNModel.csproj",
+      "msbuildProject": "../CNNModel/CNNModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "CNNModel >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.7.1",
       "coverlet.collector >= 1.3.0",
       "xunit >= 2.4.1",
@@ -5645,7 +5661,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/juan/CNN/CNNProject/CNNModel/CNNModel.csproj": {
+              "projectPath": "/home/juan/CNN/CNNProject/CNNModel/CNNModel.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

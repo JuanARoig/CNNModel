@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Aw99uBW1WZLD8eqWodBaBF1os1fQVlg+grgLoj6qfz8a5XC8W3fMDbwQgBy2G5B2Ef+5ChU077vr+sUQijkV6A==",
+  "dgSpecHash": "5GOoMYtlBjIIrYMGJKll+BCIKTRMCSJ236HGl9QpnH/ddEGYcjI8NVg0+NizfSLsXImrw33Qx97fSOgTn6mvSg==",
   "success": true,
   "projectFilePath": "/home/juan/CNN/CNNProject/CNNModel.Tests/CNNModel.Tests.csproj",
   "expectedPackageFiles": [

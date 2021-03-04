@@ -26,7 +26,7 @@ namespace neuralnet
                     current = convLayerNetwork[convLayerIndex];
                     double[] currentKernelDimensions = new double[] { currentKernel.GetLength(0), 
                                                                       currentKernel.GetLength(1),
-                                                                      currentKernel.GetLength(2) }
+                                                                      currentKernel.GetLength(2) };
                     this.convLayerNetwork.Add(REluOperation(MaxPoolingOperation(ConvolutionOperation(current, currentKernel),
                                                                                        currentKernelDimensions)));
                 }

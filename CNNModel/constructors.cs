@@ -27,10 +27,10 @@ namespace neuralnet{
 			this.biases = new List<double[]>();
 			this.weights = new List<double[,]>();
 			this.convLayerKernels = new List<double[,,]>();
-			this.convLayerNetwork = new List<double,,]>();
+			this.convLayerNetwork = new List<double[,,]>();
 			for (int i = 0; i < kernelSizes.Length; i++)
 			{
-				this.convLayerKernels.Add(new double[kernelSizes[i, 0],kernelSizes[i, 1], kernelSizes[i, 2]);
+				this.convLayerKernels.Add(new double[kernelSizes[i, 0], kernelSizes[i, 1], kernelSizes[i, 2]);
 			}
 			foreach(double[,,] kernel in convLayerKernels)
 			{
@@ -63,7 +63,7 @@ namespace neuralnet{
 	    		} 
 	    		else 
 	    		{
-	    			sizeFinalI += (-kernel.GetLength(0)) + 1;sizeI
+	    			sizeFinalI += (-kernel.GetLength(0)) + 1;
 	    		}
 	    		if (sizeJ - kernel.GetLength(1) == 1)
 	    		{
