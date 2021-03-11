@@ -21,7 +21,7 @@ namespace CNNModel.Tests
 		{
 
 		}
-		public static IEnumerable<object[]> GetTestInput()
+		public static IEnumerable<double[,,]> GetTestInput()
 		{
 			double[,,] test = {{{2, 2}}};
 			double[,,] test2 = {{{2},{6},{6}},{{6}, {6}, {6}}};
