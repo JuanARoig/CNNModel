@@ -25,8 +25,8 @@ namespace CNNModel.Tests
 		{
 			double[,,] test = {{{2, 2}}};
 			double[,,] test2 = {{{2},{6},{6}},{{6}, {6}, {6}}};
-			yield return new object[] { test };
-			yield return new object[] { test2 };
+			yield return new double[,,] { test };
+			yield return new double[,,] { test2 };
 		}
 		[Theory]
 		[MemberData(nameof(GetTestInput()))]
