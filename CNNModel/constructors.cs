@@ -11,7 +11,7 @@ namespace neuralnet{
 		
 		public ConvolutionalNN(double[,,] inputData, int[,] kernelSizes, int transitionElementAmount, int finalOutputSize, int seed)
 		{
-			if (kernel1Size[0] > 3)
+			if (kernelSizes.GetLength(1) > 3)
 			{
 				throw new Exception("this is not a 4d convnet.");
 			}
@@ -56,7 +56,7 @@ namespace neuralnet{
 			int sizeFinalK = 0;
 			while(elems < this.transitionElementAmount && kernelIndex < convLayerKernels.Capacity)
 			{
-				kernel = this.convLayerKernels[kernelIndex];
+				double[,,] kernel = this.convLayerKernels[kernelIndex];
 				if (sizeI - kernel.GetLength(0) == 1) 
 	    		{
 	    			sizeFinalI += 2;
@@ -95,7 +95,7 @@ namespace neuralnet{
 			
 			this.transitionElementAmount = sizeFinalI*sizeFinalJ*sizeFinalK;
 			int elementCountChange = (this.transitionElementAmount - this.finalOutputSize)/this.FCLayerAmount;
-			this.FCLayerSizes = new double[this.FCLayerAmount];
+			this.FCLayerSizes = new int[this.FCLayerAmount];
 			this.FCLayerSizes[0] = this.transitionElementAmount;
 			this.FCLayerSizes[this.FCLayerSizes.Length - 1] = this.finalOutputSize;
 			int startSize = this.transitionElementAmount;

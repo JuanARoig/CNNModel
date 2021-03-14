@@ -67,7 +67,7 @@ namespace neuralnet
                     double original = this.MeanSquaredCost(inputData, expectedOutput);
                     for (int x = 0; x < this.convLayerKernels.Capacity; x++)
                     {
-                        double[,] currentKernel = this.convLayerKernels[x];
+                        double[,,] currentKernel = this.convLayerKernels[x];
                         double[,,] kernelUpdateTensor = convLayerKernelUpdates[x];
                         for (int i = 0; i < currentKernel.GetLength(0); i++)
                         {

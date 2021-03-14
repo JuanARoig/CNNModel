@@ -13,9 +13,9 @@ namespace neuralnet
 			{
 				throw new Exception("Tensor dims collapsed too quickly.");
 			}
-	    	sizeI = 0;
-	    	sizeJ = 0;
-	    	sizeK = 0;
+	    	int sizeI = 0;
+	    	int sizeJ = 0;
+	    	int sizeK = 0;
 
             //the dimensions of the resulting tensor are funky.
 	    	if (inputTensor.GetLength(0) - kernel.GetLength(0) == 1) 
@@ -64,9 +64,9 @@ namespace neuralnet
 					    int startA = i;
 					    int startB = j;
 					    int startC = k;
-					    int r = kernel1Size.GetLength(0);
-					    int s = kernel1Size.GetLength(1);
-					    int t = kernel1Size.GetLength(2);
+					    int r = kernel.GetLength(0);
+					    int s = kernel.GetLength(1);
+					    int t = kernel.GetLength(2);
 					    for(int a = i; a < startA + r; a++)
 					    {
 					    	for (int b = j; b < startB + s; b++)

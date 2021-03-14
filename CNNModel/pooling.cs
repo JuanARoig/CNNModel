@@ -13,9 +13,9 @@ namespace neuralnet
 			{
 				throw new Exception("Tensor dims collapsed too quickly.");
 			}
-            sizeI = 0;
-	    	sizeJ = 0;
-	    	sizeK = 0;
+            int sizeI = 0;
+	    	int sizeJ = 0;
+	    	int sizeK = 0;
 
             //the dimensions of the resulting tensor are funky.
 	    	if (inputTensor.GetLength(0) - prevKernelDimensions[0] == 1) 
@@ -84,15 +84,15 @@ namespace neuralnet
 		    }
 		    return tensorFinal;
         }
-	    private double[,,] MaxPoolingOperation(double[,,] inputTensor, double[] prevKernelDimensions) 
+	    private double[,,] MaxPoolingOperation(double[,,] inputTensor, int[] prevKernelDimensions) 
         { 
 			if (inputTensor.GetLength(0) <= prevKernelDimensions[0] || inputTensor.GetLength(1) <= prevKernelDimensions[1] || inputTensor.GetLength(2) <= prevKernelDimensions[2])
 			{
 				throw new Exception("Tensor dims collapsed too quickly.");
 			}
-            sizeI = 0;
-	    	sizeJ = 0;
-	    	sizeK = 0;
+            int sizeI = 0;
+	    	int sizeJ = 0;
+	    	int sizeK = 0;
 
             //the dimensions of the resulting tensor are funky.
 	    	if (inputTensor.GetLength(0) - prevKernelDimensions[0] == 1) 

@@ -70,7 +70,7 @@ namespace neuralnet
 
             targetBiases[arrpos] += r;
             double affected = this.MeanSquaredCost(inputData, expectedOutput);
-            targetBiases -= r;
+            targetBiases[arrpos] -= r;
             double final = (affected - original)/r;
             return final;
         }
