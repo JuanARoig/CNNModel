@@ -7,7 +7,7 @@ namespace neuralnet
 {
     partial class ConvolutionalNN
     {
-        private double[,,] AvgPoolingOperation(double[,,] inputTensor, double[] prevKernelDimensions) 
+        private double[,,] AvgPoolingOperation(double[,,] inputTensor, int[] prevKernelDimensions) 
         { 
 			if (inputTensor.GetLength(0) <= prevKernelDimensions[0] || inputTensor.GetLength(1) <= prevKernelDimensions[1] || inputTensor.GetLength(2) <= prevKernelDimensions[2])
 			{

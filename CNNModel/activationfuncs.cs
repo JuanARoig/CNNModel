@@ -40,7 +40,7 @@ namespace neuralnet
             {
                 throw new Exception("Null vector");
             }
-            sum = 0;
+            double sum = 0;
             double[] final = new double[inputVector.Length];
             for (int i = 0; i < inputVector.Length; i++)
             {
@@ -48,8 +48,9 @@ namespace neuralnet
             }
             for (int i = 0; i < inputVector.Length; i++)
             {
-                final[i] = Math.exp(inputVector[i]) / sum;
+                final[i] = Math.Exp(inputVector[i]) / sum;
             }
+            return final;
         }
     }
 }

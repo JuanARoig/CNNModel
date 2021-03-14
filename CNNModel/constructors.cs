@@ -7,9 +7,9 @@ namespace neuralnet{
 
 	partial class ConvolutionalNN
 	{
-		public ConvolutionalNN ConvolutionalNN() { }
+		public ConvolutionalNN() { }
 		
-		public ConvolutionalNN ConvolutionalNN(double[,,] inputData, int[,] kernelSizes, int transitionElementAmount, int finalOutputSize, int seed)
+		public ConvolutionalNN(double[,,] inputData, int[,] kernelSizes, int transitionElementAmount, int finalOutputSize, int seed)
 		{
 			if (kernel1Size[0] > 3)
 			{
@@ -30,7 +30,7 @@ namespace neuralnet{
 			this.convLayerNetwork = new List<double[,,]>();
 			for (int i = 0; i < kernelSizes.Length; i++)
 			{
-				this.convLayerKernels.Add(new double[kernelSizes[i, 0], kernelSizes[i, 1], kernelSizes[i, 2]);
+				this.convLayerKernels.Add(new double[kernelSizes[i, 0], kernelSizes[i, 1], kernelSizes[i, 2]]);
 			}
 			foreach(double[,,] kernel in convLayerKernels)
 			{
@@ -108,9 +108,9 @@ namespace neuralnet{
 			{
 				this.biases.Add(new double[i]);
 			}
-			for (int i = 1, j = 0; i++, j++; i < this.FCLayerSizes.Length, j < this.FCLayerSizes.Length-1)
+			for (int i = 1; i < this.FCLayerSizes.Length; i++)
 			{
-				this.weights.Add(new double[this.FCLayerSizes[i],this.FCLayerSizes[j]]);
+				this.weights.Add(new double[this.FCLayerSizes[i],this.FCLayerSizes[i - 1]]);
 			}
 			foreach (double[] biasVector in this.biases)
 			{

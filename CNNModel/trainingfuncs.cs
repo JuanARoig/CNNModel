@@ -12,7 +12,7 @@ namespace neuralnet
         {
             for (int l = 0; l < reps; l++)
             {
-                foreach(double[,,] inputData, double[] expectedOutput in inputDataList, outputDataList)
+                foreach((double[,,] inputData, double[] expectedOutput) in inputDataList.Zip(outputDataList, (x1, x2) => (x1, x2)))
                 {
                     double original = this.CrossEntropyLoss(inputData, expectedOutput);
                     for (int x = 0; x < this.convLayerKernels.Capacity; x++)
@@ -62,7 +62,7 @@ namespace neuralnet
         {
             for (int l = 0; l < reps; l++)
             {
-                foreach(double[,,] inputData, double[] expectedOutput in inputDataList, outputDataList)
+                foreach((double[,,] inputData, double[] expectedOutput) in inputDataList.Zip(outputDataList, (x1, x2) => (x1, x2)))
                 {
                     double original = this.MeanSquaredCost(inputData, expectedOutput);
                     for (int x = 0; x < this.convLayerKernels.Capacity; x++)
