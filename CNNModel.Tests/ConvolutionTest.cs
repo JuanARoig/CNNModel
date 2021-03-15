@@ -33,7 +33,7 @@ namespace CNNModel.Tests
 			yield return new double[,,] { test2 };
 		}
 		[Theory]
-		[MemberData(GetTestInput())]
+		[InlineData(GetTestInput())]
 		public void RElu_Evaluates(double[,,] testInput)
 		{
 			Assert.True(REluOperation(testInput) != null);
@@ -60,7 +60,6 @@ namespace CNNModel.Tests
 			
 		}
 		[Theory]
-		[MemberData()]
 		public void GeneralCNN(double[,,] testInput)
 		{
 
