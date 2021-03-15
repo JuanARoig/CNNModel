@@ -5,7 +5,7 @@ using System.Text;
 
 namespace neuralnet
 {
-    partial class ConvolutionalNN
+    public partial class ConvolutionalNN
     {
         //Fully Connected Neural Net Classifier Properties
         public int seed { get; set; }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace neuralnet
 {
-    partial class ConvolutionalNN
+    public partial class ConvolutionalNN
     {
         private double[,,] REluOperation(double[,,] inputTensor)
         {

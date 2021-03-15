@@ -5,7 +5,7 @@ using System.Text;
 
 namespace neuralnet
 {
-    partial class ConvolutionalNN
+    public partial class ConvolutionalNN
     {
         private double CEPDerivKernels(double original, double[,,] inputData, double[] expectedOutput, int listpos, int arrpos1, int arrpos2, int arrpos3) 
         { 

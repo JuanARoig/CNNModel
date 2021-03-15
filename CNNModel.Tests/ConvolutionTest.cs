@@ -1,9 +1,13 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Xunit;
+using neuralnet;
 
 namespace CNNModel.Tests
 {
-    public class CNNTests : CNNModel
+    public class CNNTests : ConvolutionalNN
     {
 
     	[Theory]
@@ -29,7 +33,7 @@ namespace CNNModel.Tests
 			yield return new double[,,] { test2 };
 		}
 		[Theory]
-		[MemberData(nameof(GetTestInput()))]
+		[MemberData(GetTestInput())]
 		public void RElu_Evaluates(double[,,] testInput)
 		{
 			Assert.True(REluOperation(testInput) != null);
@@ -56,7 +60,7 @@ namespace CNNModel.Tests
 			
 		}
 		[Theory]
-		[MemberData(nameof()]
+		[MemberData()]
 		public void GeneralCNN(double[,,] testInput)
 		{
 

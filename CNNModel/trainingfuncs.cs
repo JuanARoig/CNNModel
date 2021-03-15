@@ -5,7 +5,7 @@ using System.Text;
 
 namespace neuralnet
 {
-    partial class ConvolutionalNN
+    public partial class ConvolutionalNN
     {
         //GD = Gradient Descent. Stochastic GD and Adam may be written later.
         public void CrossEntropyGDTraining(int reps, double learningRate, double lrMult, List<double[,,]> inputDataList, List<double[]> outputDataList)

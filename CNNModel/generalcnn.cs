@@ -5,7 +5,7 @@ using System.Text;
 
 namespace neuralnet
 {
-    partial class ConvolutionalNN
+    public partial class ConvolutionalNN
     {
         private double[] GeneralCNN(double[,,] inputData) 
         {
@@ -19,6 +19,7 @@ namespace neuralnet
                 int convLayerIndex = 0;
                 this.convLayerNetwork.Add(inputData);
                 current = convLayerNetwork[convLayerIndex];//first time
+
                 while ((current.GetLength(0)*current.GetLength(1)*current.GetLength(2) < this.transitionElementAmount) 
                 && kernelIndex < convLayerKernels.Capacity)
                 {
@@ -49,13 +50,13 @@ namespace neuralnet
             double[] currentLayer = new double[0];
             for (int i = 0; i < this.weights.Capacity; i++)
             {
-                if(i == 0)
+                if (i == 0)
                 {
-                    currentLayer = this.Add(SoftmaxOperation(MatrixVectorProduct(weights[i], transitionVector)), biases[i]));
+                    currentLayer = this.Add(SoftmaxOperation(MatrixVectorProduct(weights[i], transitionVector)), biases[i]);
                 }
                 else
                 {
-                    currentLayer = this.Add(SoftmaxOperation(MatrixVectorProduct(weights[i], currentLayer)), biases[i]));
+                    currentLayer = this.Add(SoftmaxOperation(MatrixVectorProduct(weights[i], currentLayer)), biases[i]);
                 }
             }
             return currentLayer;

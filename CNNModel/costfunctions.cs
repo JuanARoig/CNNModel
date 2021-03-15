@@ -5,7 +5,7 @@ using System.Text;
 
 namespace neuralnet
 {
-    partial class ConvolutionalNN
+    public partial class ConvolutionalNN
     {
         //mean squared error function
         private double MeanSquaredCost(double[,,] inputData, double[] expectedOutput)
