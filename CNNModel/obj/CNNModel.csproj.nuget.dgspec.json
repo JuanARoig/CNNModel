@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/juan/CNN/CNNProject/CNNModel/CNNModel.csproj": {}
+    "/home/juanroig/CNN/CNNModel/CNNModel/CNNModel.csproj": {}
   },
   "projects": {
-    "/home/juan/CNN/CNNProject/CNNModel/CNNModel.csproj": {
+    "/home/juanroig/CNN/CNNModel/CNNModel/CNNModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/juan/CNN/CNNProject/CNNModel/CNNModel.csproj",
+        "projectUniqueName": "/home/juanroig/CNN/CNNModel/CNNModel/CNNModel.csproj",
         "projectName": "CNNModel",
-        "projectPath": "/home/juan/CNN/CNNProject/CNNModel/CNNModel.csproj",
-        "packagesPath": "/home/juan/.nuget/packages/",
-        "outputPath": "/home/juan/CNN/CNNProject/CNNModel/obj/",
+        "projectPath": "/home/juanroig/CNN/CNNModel/CNNModel/CNNModel.csproj",
+        "packagesPath": "/home/juanroig/.nuget/packages/",
+        "outputPath": "/home/juanroig/CNN/CNNModel/CNNModel/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/juan/.nuget/NuGet/NuGet.Config"
+          "/home/juanroig/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/116/sdk/5.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
         }
       }
     }

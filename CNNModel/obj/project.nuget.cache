@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gOGQMr3wEGbWC5hIbBLydsTaAyvXQsdxpCdv6Qo49/qDJW57v7L2rBd7J7Dw1Ug3/qBLtmupSDZbiarzSWzTxQ==",
+  "dgSpecHash": "gMPDae9r0KEO6/ulpKJKwHUw39/wpm1qWeqGzCyTA7f9Cfux5dSnL8Q0qfkf2qI8A8lydzYDurrcg1Ud8jwAFw==",
   "success": true,
-  "projectFilePath": "/home/juan/CNN/CNNProject/CNNModel/CNNModel.csproj",
+  "projectFilePath": "/home/juanroig/CNN/CNNModel/CNNModel/CNNModel.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
