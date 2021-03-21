@@ -4,7 +4,7 @@ namespace neuralnet
 {
     public partial class ConvolutionalNN
     {
-        private double[,,] REluOperation(double[,,] inputTensor)
+        protected double[,,] REluOperation(double[,,] inputTensor)
         {
             if (inputTensor == null)
             {

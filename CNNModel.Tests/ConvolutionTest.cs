@@ -27,13 +27,11 @@ namespace CNNModel.Tests
 		}
 		public static IEnumerable<double[,,]> GetTestInput()
 		{
-			double[,,] test = {{{2, 2}}};
-			double[,,] test2 = {{{2},{6},{6}},{{6}, {6}, {6}}};
-			yield return new double[,,] { test };
-			yield return new double[,,] { test2 };
+			yield return new double[,,] {{{2, 2}}};
+			yield return new double[,,] {{{2},{6},{6}},{{6}, {6}, {6}}}
 		}
 		[Theory]
-		[InlineData()]
+		[ClassData(GetTestInput())]
 		public void RElu_Evaluates(double[,,] testInput)
 		{
 			Assert.True(REluOperation(testInput) != null);
@@ -41,8 +39,7 @@ namespace CNNModel.Tests
 		[Fact]
 		public void RElu_Throws_Exception()
 		{
-			double[,,] test = {{{}}};
-			Assert.Throws<Exception>(() => REluOperation(test));
+			Assert.Throws<Exception>(() => REluOperation(new double[,,] {{{}}}));
 		}
 		[Theory]
 		public void SoftmaxTest(double[] testInput)
