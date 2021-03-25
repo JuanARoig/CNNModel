@@ -6,7 +6,7 @@ namespace neuralnet
 
 
         //misc functions for fully connected neuralnet classifier below
-        private double[] MatrixVectorProduct(double[,] matrix, double[] vector)
+        protected double[] MatrixVectorProduct(double[,] matrix, double[] vector)
         {
             double[] final = new double[matrix.GetLength(0)];
 
@@ -21,7 +21,7 @@ namespace neuralnet
 
             return final;
         }
-        private double[] Add(double[] a, double[] b)
+        protected double[] Add(double[] a, double[] b)
         {
             double[] final = new double[a.Length];
             for (int i = 0; i < a.Length; i++)

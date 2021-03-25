@@ -2,7 +2,7 @@ namespace neuralnet
 {
     public partial class ConvolutionalNN
     {
-        private double CEPDerivKernels(double original, double[,,] inputData, double[] expectedOutput, int listpos, int arrpos1, int arrpos2, int arrpos3) 
+        protected double CEPDerivKernels(double original, double[,,] inputData, double[] expectedOutput, int listpos, int arrpos1, int arrpos2, int arrpos3) 
         { 
             double r = 0.00000001;
             double[,,] targetKernel = this.convLayerKernels[listpos];
@@ -13,7 +13,7 @@ namespace neuralnet
             double final = (affected - original)/r;
             return final;
         }
-        private double CEPDerivWeights(double original, double[,,] inputData, double[] expectedOutput, int listpos, int arrpos1, int arrpos2) 
+        protected double CEPDerivWeights(double original, double[,,] inputData, double[] expectedOutput, int listpos, int arrpos1, int arrpos2) 
         { 
             double r = 0.00000001;
             double[,] targetWeights = this.weights[listpos];
@@ -24,7 +24,7 @@ namespace neuralnet
             double final = (affected - original)/r;
             return final;
         }
-        private double CEPDerivBiases(double original, double[,,] inputData, double[] expectedOutput, int listpos, int arrpos) 
+        protected double CEPDerivBiases(double original, double[,,] inputData, double[] expectedOutput, int listpos, int arrpos) 
         { 
             double r = 0.00000001;
             double[] targetBiases = this.biases[listpos];
@@ -36,7 +36,7 @@ namespace neuralnet
             return final;
         }
 
-        private double MSEPDerivKernels(double original, double[,,] inputData, double[] expectedOutput, int listpos, int arrpos1, int arrpos2, int arrpos3) 
+        protected double MSEPDerivKernels(double original, double[,,] inputData, double[] expectedOutput, int listpos, int arrpos1, int arrpos2, int arrpos3) 
         { 
             double r = 0.00000001;
             double[,,] targetKernel = this.convLayerKernels[listpos];
@@ -47,7 +47,7 @@ namespace neuralnet
             double final = (affected - original)/r;
             return final;
         }
-        private double MSEPDerivWeights(double original, double[,,] inputData, double[] expectedOutput, int listpos, int arrpos1, int arrpos2) 
+        protected double MSEPDerivWeights(double original, double[,,] inputData, double[] expectedOutput, int listpos, int arrpos1, int arrpos2) 
         { 
             double r = 0.00000001;
             double[,] targetWeights = this.weights[listpos];
@@ -58,7 +58,7 @@ namespace neuralnet
             double final = (affected - original)/r;
             return final;
         }
-        private double MSEPDerivBiases(double original, double[,,] inputData, double[] expectedOutput, int listpos, int arrpos) 
+        protected double MSEPDerivBiases(double original, double[,,] inputData, double[] expectedOutput, int listpos, int arrpos) 
         { 
             double r = 0.00000001;
             double[] targetBiases = this.biases[listpos];

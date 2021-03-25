@@ -4,7 +4,7 @@ namespace neuralnet
 {
     public partial class ConvolutionalNN
     {
-        private double[,,] ConvolutionOperation(double[,,] inputTensor, double[,,] kernel) 
+        protected double[,,] ConvolutionOperation(double[,,] inputTensor, double[,,] kernel) 
 	    {	
 			if (inputTensor.GetLength(0) <= kernel.GetLength(0) || inputTensor.GetLength(1) <= kernel.GetLength(1) || inputTensor.GetLength(2) <= kernel.GetLength(2))
 			{

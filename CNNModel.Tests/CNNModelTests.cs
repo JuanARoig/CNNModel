@@ -12,7 +12,7 @@ namespace CNNModel.Tests
     	[Fact]
     	public void Convolution_Evaluates_Input1()
     	{
-			
+			Assert.True(ConvolutionOperation(new double[,,]{{{}}}, new double[,,] {{{}}}) != null);
     	}
 		[Fact]
     	public void Convolution_Evaluates_Input2()

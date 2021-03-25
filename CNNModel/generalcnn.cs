@@ -2,7 +2,7 @@ namespace neuralnet
 {
     public partial class ConvolutionalNN
     {
-        private double[] GeneralCNN(double[,,] inputData) 
+        protected double[] GeneralCNN(double[,,] inputData) 
         {
             int elementAmount = inputData.GetLength(0)*inputData.GetLength(1)*inputData.GetLength(2);
             int kernelListCounter = 0; 

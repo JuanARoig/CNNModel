@@ -31,7 +31,7 @@ namespace neuralnet
             return final;
         }
   
-        private double[] SoftmaxOperation(double[] inputVector)//activation function for fully connected portion
+        protected double[] SoftmaxOperation(double[] inputVector)//activation function for fully connected portion
         {
             if(inputVector.Length == 0)
             {
