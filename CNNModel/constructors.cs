@@ -61,7 +61,7 @@ namespace neuralnet{
 	    		} 
 	    		else 
 	    		{
-	    			sizeFinalI += (-kernel.GetLength(0)) + 1;
+	    			sizeFinalI += (sizeI - kernel.GetLength(0)) + 1;
 	    		}
 	    		if (sizeJ - kernel.GetLength(1) == 1)
 	    		{
