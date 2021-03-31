@@ -31,31 +31,37 @@ namespace CNNModel.Tests
 		public void AvgPooling_Evaluates_Input1()
 		{
 			//fill this.
+			Assert.True(AvgPoolingOperation(new double[,,] {{{}}}, new int[] {}) != null);
 		}
 		[Fact]
 		public void AvgPooling_Evaluates_Input2()
 		{
 			//fill this.
+			Assert.True(AvgPoolingOperation(new double[,,] {{{}}}, new int[] {}) != null);
 		}
 		[Fact]
 		public void AvgPooling_Throws_Exception()
 		{
 			//fill this.
+			Assert.Throws<Exception>(() => (AvgPoolingOperation(new double[,,] {{{}}}, new int[] {}) != null));
 		}
 		[Fact]
 		public void MaxPooling_Evaluates_Input1()
 		{
 			//fill this.
+			Assert.True(MaxPoolingOperation(new double[,,] {{{}}}, new int[] {}) != null);
 		}
 		[Fact]
 		public void MaxPooling_Evaluates_Input2()
 		{
 			//fill this.
+			Assert.True(MaxPoolingOperation(new double[,,] {{{}}}, new int[] {}) != null);
 		}
 		[Fact]
-		public void MAxPooling_Throws_Exception()
+		public void MaxPooling_Throws_Exception()
 		{
-			//fill this.			
+			//fill this.
+			Assert.Throws<Exception>(() => (MaxPoolingOperation(new double[,,] {{{}}}, new int[] {}) != null));			
 		}
 		[Fact]
 		public void RElu_Evaluates_Input1()
@@ -75,62 +81,74 @@ namespace CNNModel.Tests
 		[Fact]
 		public void SoftmaxEvaluates_Input1()
 		{
-			//fill this.			
+			//fill this.
+			Assert.True(SoftmaxOperation(new double[] {}) != null);			
 		}
 		[Fact]
 		public void SoftmaxEvaluates_Input2()
 		{
-			//fill this.			
+			//fill this.
+			Assert.True(SoftmaxOperation(new double[] {}) != null);			
 		}
 		[Fact]
 		public void Softmax_Throws_Exception()
 		{
 			//fill this.
+			Assert.Throws<Exception>(() => SoftmaxOperation(new double[] {}));
 		}
 		[Fact]
 		public void MatrixVectorProduct_Evaluates_Input1()
 		{
-			//fill this.			
+			//fill this.
+			Assert.True(MatrixVectorProduct(new double[,] {{}}, new double[] {}) != null);			
 		}
 		[Fact]
 		public void MatrixVectorProduct_Evaluates_Input2()
 		{
-			//fill this.			
+			//fill this.
+			Assert.True(MatrixVectorProduct(new double[,] {{}}, new double[] {}) != null);			
 		}
 		[Fact]
 		public void MatrixVectorProduct_Throws_Exception()
 		{
 			//fill this.
+			Assert.Throws<Exception>( () => MatrixVectorProduct(new double[,] {{}}, new double[] {}));
 		}
 		[Fact]
 		public void Add_Evaluates_Input1()
 		{
-			//fill this.			
+			//fill this.
+			Assert.True(Add(new double[] {}, new double[] {}) != null);			
 		}
 		[Fact]
 		public void Add_Evaluates_Input2()
 		{
-			//fill this.			
+			//fill this.
+			Assert.True(Add(new double[] {}, new double[] {}) != null);			
 		}
 		[Fact]
 		public void Add_Throws_Exception()
 		{
 			//fill this.
+			Assert.Throws<Exception>(() => Add(new double[] {}, new double[] {}));
 		}
 		[Fact]
 		public void GeneralCNN_Evaluates_Input1()
 		{
-			//fill this.			
+			//fill this.
+			Assert.True(GeneralCNN(new double[,,] {{{}}}) != null);			
 		}
 		[Fact]
 		public void GeneralCNN_Evaluates_Input2()
 		{
-			//fill this.			
+			//fill this.		
+			Assert.True(GeneralCNN(new double[,,] {{{}}}) != null);		
 		}
 		[Fact]
 		public void GeneralCNN_Throws_Exception()
 		{
 			//fill this.
+			Assert.Throws<Exception>(() => GeneralCNN(new double[,,] {{{}}}));
 		}
     }
 }
