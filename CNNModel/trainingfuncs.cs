@@ -24,7 +24,7 @@ namespace neuralnet
                             {
                                 for (int k = 0; k < currentKernel.GetLength(2); k++)
                                 {
-                                    kernelUpdateTensor[i, j, k] = (-1*learningRate*this.CEPDerivKernels(original, inputData, expectedOutput, x, i, j, k));
+                                    kernelUpdateTensor[i, j, k] = (currentKernel[i, j k] - 1*learningRate*this.CEPDerivKernels(original, inputData, expectedOutput, x, i, j, k));
                                 }
                             }
                         }
