@@ -37,7 +37,7 @@ namespace neuralnet
                         {
                             for (int j = 0; j < currentWeights.GetLength(1); j++)
                             {
-                                  weightsUpdateMatrix[i, j] = (-1*learningRate*this.CEPDerivWeights(original, inputData, expectedOutput, x, i, j));                                 
+                                  weightsUpdateMatrix[i, j] = (currentWeights[i, j] - 1*learningRate*this.CEPDerivWeights(original, inputData, expectedOutput, x, i, j));                                 
                             }
                         }
                     }
@@ -47,7 +47,7 @@ namespace neuralnet
                         double[] biasUpdateVector = this.biasupdates[x];
                         for (int i = 0; i < currentBiases.Length; i++)
                         {
-                            biasUpdateVector[i] = (-1*learningRate*this.CEPDerivBiases(original, inputData, expectedOutput, x, i));
+                            biasUpdateVector[i] = (currentBiases[i] - 1*learningRate*this.CEPDerivBiases(original, inputData, expectedOutput, x, i));
                         }
                     }
                 }
@@ -74,7 +74,7 @@ namespace neuralnet
                             {
                                 for (int k = 0; k < currentKernel.GetLength(2); k++)
                                 {
-                                    kernelUpdateTensor[i, j, k] = (-1*learningRate*this.MSEPDerivKernels(original, inputData, expectedOutput, x, i, j, k));
+                                    kernelUpdateTensor[i, j, k] = (currentKernel[i, j, k] - 1*learningRate*this.MSEPDerivKernels(original, inputData, expectedOutput, x, i, j, k));
                                 }
                             }
                         }
@@ -87,7 +87,7 @@ namespace neuralnet
                         {
                             for (int j = 0; j < currentWeights.GetLength(1); j++)
                             {
-                                weightsUpdateMatrix[i, j] = (-1*learningRate*this.MSEPDerivWeights(original, inputData, expectedOutput, x, i, j));
+                                weightsUpdateMatrix[i, j] = (currentWeights[i, j] - 1*learningRate*this.MSEPDerivWeights(original, inputData, expectedOutput, x, i, j));
                             }
                         }
                     }
@@ -97,7 +97,7 @@ namespace neuralnet
                         double[] biasUpdateVector = this.biasupdates[x];
                         for (int i = 0; i < currentBiases.Length; i++)
                         {
-                            biasUpdateVector[i] = (-1*learningRate*MSEPDerivBiases(original, inputData, expectedOutput, x, i));
+                            biasUpdateVector[i] = (currentBiases[i] -  1*learningRate*MSEPDerivBiases(original, inputData, expectedOutput, x, i));
                         }
                     }
                 }
